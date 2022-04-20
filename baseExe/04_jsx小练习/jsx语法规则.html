@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jsx练习</title>
+  <style>
+
+  </style>
+</head>
+<body>
+  
+  <div id="test"></div>
+
+  <script type="text/javascript" src="../js/react.development.js"></script>
+  <script type="text/javascript" src="../js/react-dom.development.js"></script>
+  <script type="text/javascript" src="../js/babel.min.js"></script>
+  <script type="text/babel">
+    /*
+      js语句 vs js表达式
+        1.表达式： 一个表达式会产生一个值，可放在任何一个需要值得地方
+         ex：
+          (1).a
+          (2).a+b
+          (3).demo(1)
+          (4).arr.map()
+          (4).function test () {}
+        2.语句：判断代码走向
+          ex:
+            (1).if(){}  
+            (2).for(){}  
+            (3).switch(){}  
+    */
+    const data= [
+      {name:"Angular"},
+      {name:"React"},
+      {name:"Vue"},
+    ]
+    const VDOM = (
+      <div>
+        <h1>框架列表</h1>
+        <ul>
+          {
+            data.map(item=>{
+              return <li key={item.name}>{item.name}</li>
+            })
+          }
+        </ul>
+      </div>
+      
+    )
+    
+    ReactDOM.render(VDOM,document.getElementById("test"))
+    
+
+  </script>
+</body>
+</html>

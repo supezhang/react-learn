@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>字符串形式ref</title>
+</head>
+<body>
+  
+  <div id="test"></div>
+
+  <script type="text/javascript" src="../js/react.development.js"></script>
+  <script type="text/javascript" src="../js/react-dom.development.js"></script>
+  <script type="text/javascript" src="../js/babel.min.js"></script>
+  <script type="text/javascript" src="../js/props-types.js"></script>
+  <script type="text/babel">
+    
+    // 创建组件 
+    class Demo extends React.Component {
+      showData=()=>{
+        console.log(this.refs);
+        const {ipt1} = this.refs
+        alert(ipt1.value)
+      }
+      showData2= ()=>{
+        const {ipt2} = this.refs
+        alert(ipt2.value)
+      }
+      render(){
+        console.log(this);
+        return (
+         <div>
+          <input ref="ipt1" type="text" placeholder="点button显示数据"/>&nbsp;&nbsp;
+          <button onClick={this.showData}>左侧数据</button>&nbsp;&nbsp;
+          <input ref="ipt2" type="text" onBlur={this.showData2} placeholder="失去焦点显示数据"/>
+         </div>
+        )
+      }
+    }
+  
+    ReactDOM.render(<Demo/>,document.getElementById("test"))
+  
+  </script>
+</body>
+</html>
