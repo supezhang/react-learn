@@ -1,34 +1,25 @@
 import React, { Component } from 'react';
-import {Route,Switch,Redirect} from 'react-router-dom'
-import Header from './components/Header'
-import MyNavlink from './components/MyNavlink'
-import Home from './pages/Home'
-import About from './pages/About'
+import {Button,DatePicker} from 'antd';
+import {WechatOutlined,SearchOutlined} from '@ant-design/icons';
 
-import './App.css'
+import 'antd/dist/antd.css';
+const {RangePicker} = DatePicker;
 export default class App extends Component { 
+  getDataVal=(date, dateString)=>{
+    console.log(date, dateString);
+  }
   render() {
     return (
       <div className="diy-container">
         <div className="app-wrapper">
-          <Header/>
-          <div className="main">
-            <div className="sidebar-col">
-              <ul className="sidebar-nav">                
-                <li><MyNavlink activeClassName="on" to="/home" children="home"/></li>
-                <li><MyNavlink activeClassName="on" to="/about">about</MyNavlink></li>                             
-              </ul>
-            </div>
-            <div className="content-col">
-              <div className="pages-content">
-                <Switch>
-                  <Route path="/home" component={Home}/>
-                  <Route path="/about" component={About}/>  
-                  <Redirect to="/about"/>              
-                </Switch>               
-              </div>
-            </div>
-          </div>
+          <Button type='primary'>primary</Button>
+          <Button>primary</Button>
+          <Button type='link'>link</Button>
+          <Button type='primary' icon={<SearchOutlined/>}>search</Button>
+          <WechatOutlined/>
+          <br />
+          <DatePicker onChange={this.getDataVal}/>
+          <RangePicker/>
         </div>
       </div>
     );

@@ -87,3 +87,11 @@ BrowserRouter 与 HashRouter 的区别：
 
 -->
 
+### 纯函数
+<!--
+ 1.传入同样的输入（实参），必须得到同样的输出
+  ex:function demo(a){return Math.random()+a}
+      new Date();等 
+-->
+
+

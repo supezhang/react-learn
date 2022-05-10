@@ -11,6 +11,7 @@ class index extends Component {
     ]
   }
   pushShow=(id,title)=>{
+    // 编程式路由导航
     // push 调转 携带params参数
     // this.props.history.push(`/home/message/detail/${id}/${title}`)
 

@@ -12,7 +12,7 @@ class index extends Component {
     this.props.history.go(1)
   }
   render() {
-    console.log(this.props);
+    console.log('header',this.props);
     return (
       <div className="header">
         <h2 className="tit-demo">React Router Demo</h2>
